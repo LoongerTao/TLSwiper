@@ -1,0 +1,608 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		048DAA7924558AC70071CA96 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 048DAA7824558AC70071CA96 /* AppDelegate.m */; };
+		048DAA7C24558AC70071CA96 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 048DAA7B24558AC70071CA96 /* SceneDelegate.m */; };
+		048DAA7F24558AC70071CA96 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 048DAA7E24558AC70071CA96 /* ViewController.m */; };
+		048DAA8224558AC70071CA96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 048DAA8024558AC70071CA96 /* Main.storyboard */; };
+		048DAA8424558ACA0071CA96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 048DAA8324558ACA0071CA96 /* Assets.xcassets */; };
+		048DAA8724558ACA0071CA96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 048DAA8524558ACA0071CA96 /* LaunchScreen.storyboard */; };
+		048DAA8A24558ACA0071CA96 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 048DAA8924558ACA0071CA96 /* main.m */; };
+		048DAA9424558ACA0071CA96 /* TLSwiperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 048DAA9324558ACA0071CA96 /* TLSwiperTests.m */; };
+		048DAA9F24558ACA0071CA96 /* TLSwiperUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 048DAA9E24558ACA0071CA96 /* TLSwiperUITests.m */; };
+		048DAAAF24558BE80071CA96 /* TLSwiper.m in Sources */ = {isa = PBXBuildFile; fileRef = 048DAAAE24558BE80071CA96 /* TLSwiper.m */; };
+		0497B99A245ABB510046C7A0 /* SettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0497B998245ABB510046C7A0 /* SettingController.m */; };
+		0497B99B245ABB510046C7A0 /* SettingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0497B999245ABB510046C7A0 /* SettingController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		048DAA9024558ACA0071CA96 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 048DAA6C24558AC70071CA96 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 048DAA7324558AC70071CA96;
+			remoteInfo = TLSwiper;
+		};
+		048DAA9B24558ACA0071CA96 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 048DAA6C24558AC70071CA96 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 048DAA7324558AC70071CA96;
+			remoteInfo = TLSwiper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		048DAA7424558AC70071CA96 /* TLSwiper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TLSwiper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		048DAA7724558AC70071CA96 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		048DAA7824558AC70071CA96 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		048DAA7A24558AC70071CA96 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		048DAA7B24558AC70071CA96 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		048DAA7D24558AC70071CA96 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		048DAA7E24558AC70071CA96 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		048DAA8124558AC70071CA96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		048DAA8324558ACA0071CA96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		048DAA8624558ACA0071CA96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		048DAA8824558ACA0071CA96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		048DAA8924558ACA0071CA96 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		048DAA8F24558ACA0071CA96 /* TLSwiperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TLSwiperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		048DAA9324558ACA0071CA96 /* TLSwiperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLSwiperTests.m; sourceTree = "<group>"; };
+		048DAA9524558ACA0071CA96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		048DAA9A24558ACA0071CA96 /* TLSwiperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TLSwiperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		048DAA9E24558ACA0071CA96 /* TLSwiperUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLSwiperUITests.m; sourceTree = "<group>"; };
+		048DAAA024558ACA0071CA96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		048DAAAD24558BE80071CA96 /* TLSwiper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLSwiper.h; sourceTree = "<group>"; };
+		048DAAAE24558BE80071CA96 /* TLSwiper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLSwiper.m; sourceTree = "<group>"; };
+		0497B997245ABB510046C7A0 /* SettingController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingController.h; sourceTree = "<group>"; };
+		0497B998245ABB510046C7A0 /* SettingController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingController.m; sourceTree = "<group>"; };
+		0497B999245ABB510046C7A0 /* SettingController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		048DAA7124558AC70071CA96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		048DAA8C24558ACA0071CA96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		048DAA9724558ACA0071CA96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		048DAA6B24558AC70071CA96 = {
+			isa = PBXGroup;
+			children = (
+				048DAA7624558AC70071CA96 /* TLSwiper */,
+				048DAA9224558ACA0071CA96 /* TLSwiperTests */,
+				048DAA9D24558ACA0071CA96 /* TLSwiperUITests */,
+				048DAA7524558AC70071CA96 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		048DAA7524558AC70071CA96 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				048DAA7424558AC70071CA96 /* TLSwiper.app */,
+				048DAA8F24558ACA0071CA96 /* TLSwiperTests.xctest */,
+				048DAA9A24558ACA0071CA96 /* TLSwiperUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		048DAA7624558AC70071CA96 /* TLSwiper */ = {
+			isa = PBXGroup;
+			children = (
+				048DAAAC24558B130071CA96 /* TLSwiper */,
+				048DAA7724558AC70071CA96 /* AppDelegate.h */,
+				048DAA7824558AC70071CA96 /* AppDelegate.m */,
+				048DAA7A24558AC70071CA96 /* SceneDelegate.h */,
+				048DAA7B24558AC70071CA96 /* SceneDelegate.m */,
+				0497B997245ABB510046C7A0 /* SettingController.h */,
+				0497B998245ABB510046C7A0 /* SettingController.m */,
+				0497B999245ABB510046C7A0 /* SettingController.xib */,
+				048DAA7D24558AC70071CA96 /* ViewController.h */,
+				048DAA7E24558AC70071CA96 /* ViewController.m */,
+				048DAA8024558AC70071CA96 /* Main.storyboard */,
+				048DAA8324558ACA0071CA96 /* Assets.xcassets */,
+				048DAA8524558ACA0071CA96 /* LaunchScreen.storyboard */,
+				048DAA8824558ACA0071CA96 /* Info.plist */,
+				048DAA8924558ACA0071CA96 /* main.m */,
+			);
+			path = TLSwiper;
+			sourceTree = "<group>";
+		};
+		048DAA9224558ACA0071CA96 /* TLSwiperTests */ = {
+			isa = PBXGroup;
+			children = (
+				048DAA9324558ACA0071CA96 /* TLSwiperTests.m */,
+				048DAA9524558ACA0071CA96 /* Info.plist */,
+			);
+			path = TLSwiperTests;
+			sourceTree = "<group>";
+		};
+		048DAA9D24558ACA0071CA96 /* TLSwiperUITests */ = {
+			isa = PBXGroup;
+			children = (
+				048DAA9E24558ACA0071CA96 /* TLSwiperUITests.m */,
+				048DAAA024558ACA0071CA96 /* Info.plist */,
+			);
+			path = TLSwiperUITests;
+			sourceTree = "<group>";
+		};
+		048DAAAC24558B130071CA96 /* TLSwiper */ = {
+			isa = PBXGroup;
+			children = (
+				048DAAAD24558BE80071CA96 /* TLSwiper.h */,
+				048DAAAE24558BE80071CA96 /* TLSwiper.m */,
+			);
+			path = TLSwiper;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		048DAA7324558AC70071CA96 /* TLSwiper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 048DAAA324558ACA0071CA96 /* Build configuration list for PBXNativeTarget "TLSwiper" */;
+			buildPhases = (
+				048DAA7024558AC70071CA96 /* Sources */,
+				048DAA7124558AC70071CA96 /* Frameworks */,
+				048DAA7224558AC70071CA96 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TLSwiper;
+			productName = TLSwiper;
+			productReference = 048DAA7424558AC70071CA96 /* TLSwiper.app */;
+			productType = "com.apple.product-type.application";
+		};
+		048DAA8E24558ACA0071CA96 /* TLSwiperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 048DAAA624558ACA0071CA96 /* Build configuration list for PBXNativeTarget "TLSwiperTests" */;
+			buildPhases = (
+				048DAA8B24558ACA0071CA96 /* Sources */,
+				048DAA8C24558ACA0071CA96 /* Frameworks */,
+				048DAA8D24558ACA0071CA96 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				048DAA9124558ACA0071CA96 /* PBXTargetDependency */,
+			);
+			name = TLSwiperTests;
+			productName = TLSwiperTests;
+			productReference = 048DAA8F24558ACA0071CA96 /* TLSwiperTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		048DAA9924558ACA0071CA96 /* TLSwiperUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 048DAAA924558ACA0071CA96 /* Build configuration list for PBXNativeTarget "TLSwiperUITests" */;
+			buildPhases = (
+				048DAA9624558ACA0071CA96 /* Sources */,
+				048DAA9724558ACA0071CA96 /* Frameworks */,
+				048DAA9824558ACA0071CA96 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				048DAA9C24558ACA0071CA96 /* PBXTargetDependency */,
+			);
+			name = TLSwiperUITests;
+			productName = TLSwiperUITests;
+			productReference = 048DAA9A24558ACA0071CA96 /* TLSwiperUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		048DAA6C24558AC70071CA96 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = Gxdy;
+				TargetAttributes = {
+					048DAA7324558AC70071CA96 = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+					048DAA8E24558ACA0071CA96 = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = 048DAA7324558AC70071CA96;
+					};
+					048DAA9924558ACA0071CA96 = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = 048DAA7324558AC70071CA96;
+					};
+				};
+			};
+			buildConfigurationList = 048DAA6F24558AC70071CA96 /* Build configuration list for PBXProject "TLSwiper" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 048DAA6B24558AC70071CA96;
+			productRefGroup = 048DAA7524558AC70071CA96 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				048DAA7324558AC70071CA96 /* TLSwiper */,
+				048DAA8E24558ACA0071CA96 /* TLSwiperTests */,
+				048DAA9924558ACA0071CA96 /* TLSwiperUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		048DAA7224558AC70071CA96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0497B99B245ABB510046C7A0 /* SettingController.xib in Resources */,
+				048DAA8724558ACA0071CA96 /* LaunchScreen.storyboard in Resources */,
+				048DAA8424558ACA0071CA96 /* Assets.xcassets in Resources */,
+				048DAA8224558AC70071CA96 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		048DAA8D24558ACA0071CA96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		048DAA9824558ACA0071CA96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		048DAA7024558AC70071CA96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				048DAA7F24558AC70071CA96 /* ViewController.m in Sources */,
+				048DAA7924558AC70071CA96 /* AppDelegate.m in Sources */,
+				048DAA8A24558ACA0071CA96 /* main.m in Sources */,
+				048DAAAF24558BE80071CA96 /* TLSwiper.m in Sources */,
+				0497B99A245ABB510046C7A0 /* SettingController.m in Sources */,
+				048DAA7C24558AC70071CA96 /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		048DAA8B24558ACA0071CA96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				048DAA9424558ACA0071CA96 /* TLSwiperTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		048DAA9624558ACA0071CA96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				048DAA9F24558ACA0071CA96 /* TLSwiperUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		048DAA9124558ACA0071CA96 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 048DAA7324558AC70071CA96 /* TLSwiper */;
+			targetProxy = 048DAA9024558ACA0071CA96 /* PBXContainerItemProxy */;
+		};
+		048DAA9C24558ACA0071CA96 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 048DAA7324558AC70071CA96 /* TLSwiper */;
+			targetProxy = 048DAA9B24558ACA0071CA96 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		048DAA8024558AC70071CA96 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				048DAA8124558AC70071CA96 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		048DAA8524558ACA0071CA96 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				048DAA8624558ACA0071CA96 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		048DAAA124558ACA0071CA96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		048DAAA224558ACA0071CA96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		048DAAA424558ACA0071CA96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TLSwiper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Gxdy.TLSwiper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		048DAAA524558ACA0071CA96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TLSwiper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Gxdy.TLSwiper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		048DAAA724558ACA0071CA96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TLSwiperTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Gxdy.TLSwiperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TLSwiper.app/TLSwiper";
+			};
+			name = Debug;
+		};
+		048DAAA824558ACA0071CA96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TLSwiperTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Gxdy.TLSwiperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TLSwiper.app/TLSwiper";
+			};
+			name = Release;
+		};
+		048DAAAA24558ACA0071CA96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TLSwiperUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Gxdy.TLSwiperUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TLSwiper;
+			};
+			name = Debug;
+		};
+		048DAAAB24558ACA0071CA96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TLSwiperUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Gxdy.TLSwiperUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TLSwiper;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		048DAA6F24558AC70071CA96 /* Build configuration list for PBXProject "TLSwiper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				048DAAA124558ACA0071CA96 /* Debug */,
+				048DAAA224558ACA0071CA96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		048DAAA324558ACA0071CA96 /* Build configuration list for PBXNativeTarget "TLSwiper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				048DAAA424558ACA0071CA96 /* Debug */,
+				048DAAA524558ACA0071CA96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		048DAAA624558ACA0071CA96 /* Build configuration list for PBXNativeTarget "TLSwiperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				048DAAA724558ACA0071CA96 /* Debug */,
+				048DAAA824558ACA0071CA96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		048DAAA924558ACA0071CA96 /* Build configuration list for PBXNativeTarget "TLSwiperUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				048DAAAA24558ACA0071CA96 /* Debug */,
+				048DAAAB24558ACA0071CA96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 048DAA6C24558AC70071CA96 /* Project object */;
+}
