@@ -116,7 +116,6 @@ static int const SwiperPageCount = 3;
     UIPageControl *pageControl = [[UIPageControl alloc] init];
     pageControl.numberOfPages = 1;
     pageControl.currentPage = 0;
-    [pageControl addTarget:self action:@selector(scrollToPage:) forControlEvents:UIControlEventValueChanged];
     [self addSubview:pageControl];
     _pageControl = pageControl;
 }
@@ -211,9 +210,16 @@ static int const SwiperPageCount = 3;
 
 // MARK: - 内容更新
 - (void)setIsInfiniteFlow:(BOOL)isInfiniteFlow {
-    _isInfiniteFlow = isInfiniteFlow;
+    if (self.isInfiniteFlow == isInfiniteFlow) return;
     
-    if (isInfiniteFlow) return;
+    _isInfiniteFlow = isInfiniteFlow;
+    [self.scrollView setContentOffset:CGPointZero animated:NO];
+    self.pageControl.currentPage = 0;
+    
+    if (isInfiniteFlow) {
+        [self reloadData];
+        return;;
+    }
     
     /// 非无限流下的初始化数据
     self.pageControl.numberOfPages = [self.delegate numberOfPageInSwiper:self];
@@ -328,16 +334,24 @@ static int const SwiperPageCount = 3;
     if (!self.isInfiniteFlow && [self isLastPage]) return;
     
     if (self.isScrollHorizontal) {
-        [self.scrollView setContentOffset:CGPointMake(2 * self.scrollView.frame.size.width, 0) animated:YES];
+        CGFloat offset = self.scrollView.contentOffset.x + self.scrollView.frame.size.width; // 模拟滚动
+        [self.scrollView setContentOffset:CGPointMake(offset, 0) animated:YES];
     } else {
-        [self.scrollView setContentOffset:CGPointMake(0, 2 * self.scrollView.frame.size.height) animated:YES];
+        CGFloat offset = self.scrollView.contentOffset.y + self.scrollView.frame.size.height;
+        [self.scrollView setContentOffset:CGPointMake(0, offset) animated:YES];
     }
 }
 
 - (void)previousPage {
     if (!self.isInfiniteFlow && [self isFirstPage]) return;
     
-    [self.scrollView setContentOffset:CGPointMake(0, 0) animated:YES];
+    if (self.isScrollHorizontal) {
+        CGFloat offset = self.scrollView.contentOffset.x - self.scrollView.frame.size.width;
+        [self.scrollView setContentOffset:CGPointMake(offset, 0) animated:YES];
+    } else {
+        CGFloat offset = self.scrollView.contentOffset.y - self.scrollView.frame.size.height;
+        [self.scrollView setContentOffset:CGPointMake(0, offset) animated:YES];
+    }
 }
 
 /*

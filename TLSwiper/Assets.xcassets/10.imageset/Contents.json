@@ -1,11 +1,11 @@
 {
   "images" : [
     {
+      "filename" : "10.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "setting@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
@@ -17,8 +17,5 @@
   "info" : {
     "author" : "xcode",
     "version" : 1
-  },
-  "properties" : {
-    "template-rendering-intent" : "original"
   }
 }

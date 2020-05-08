@@ -12,13 +12,13 @@
 @implementation SettingItem
 + (instancetype)defaultItem {
     SettingItem *item = [[SettingItem alloc] init];
+    item.scrollHorizontal = YES;
     item.isInfiniteFlow = YES;
+    item.autoPlay = YES;
     item.pageCount = 5;
     item.pageControlFrame = CGRectZero;
-    item.scrollHorizontal = YES;
-    item.autoPlay = NO;
     item.pageViewType = 0;
-    item.inset = UIEdgeInsetsZero;
+    item.inset = UIEdgeInsetsMake(30, 30, 30, 30);
     
     return item;
 }
@@ -51,11 +51,8 @@
     [super viewDidLoad];
     
     [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self.view action:@selector(endEditing:)]];
-}
-
-- (void)setSettingItem:(SettingItem *)settingItem {
-    _settingItem = settingItem;
     
+    SettingItem *settingItem = self.settingItem;
     _scrollDirectionSgmt.selectedSegmentIndex = settingItem.isScrollHorizontal ? 0 : 1;
     _infiniteFlowSwitch.on = settingItem.isInfiniteFlow;
     _autoPlaySwitch.on = settingItem.isAutoPlay;

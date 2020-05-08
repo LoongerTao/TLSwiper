@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 视图中最多只有三个page显示在屏幕上的，其他的都会扔进缓存池
 @interface TLSwiper : UIView
-/// 是否为无限流，Default is true
+/// 是否为无限流，Default is true. 设置该参数后回重置页面
 @property(nonatomic, assign) BOOL isInfiniteFlow;
 /// 分页控件
 @property (weak, nonatomic, readonly) UIPageControl *pageControl;

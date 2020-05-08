@@ -26,11 +26,14 @@
     swiper.pageControl.currentPageIndicatorTintColor = [UIColor systemRedColor];
     [self.view addSubview:swiper];
     _swiper = swiper;
+    
     self.settingItem = [SettingItem defaultItem];
     
     UIButton *btn = [UIButton systemButtonWithImage:[UIImage imageNamed:@"setting"] target:self action:@selector(setting)];
-    btn.tintColor = [UIColor systemOrangeColor];
-    btn.frame = CGRectMake(self.view.bounds.size.width - 50, self.view.bounds.size.height - 120, 40, 40);
+    btn.frame = CGRectMake(self.view.bounds.size.width - 50, self.view.bounds.size.height - 80, 40, 40);
+    btn.backgroundColor = [UIColor colorWithWhite:0 alpha:0.2];
+    btn.layer.cornerRadius = 20;
+    btn.clipsToBounds = YES;
     [self.view addSubview:btn];
 }
 
@@ -72,21 +75,22 @@
             label.textAlignment = NSTextAlignmentCenter;
             label.textColor = [UIColor lightGrayColor];
             label.font = [UIFont boldSystemFontOfSize:200];
-            label.backgroundColor = index % 2 ? [UIColor systemTealColor] : [UIColor systemPinkColor];
             pageView = label;
         }else {
             UIImageView *imgView = [[UIImageView alloc] init];
-            imgView.contentMode = UIViewContentModeScaleAspectFit;
+            imgView.contentMode = UIViewContentModeScaleAspectFill;
             imgView.backgroundColor = [UIColor tertiarySystemGroupedBackgroundColor];
+            imgView.clipsToBounds = YES;
             pageView = imgView;
         }
         
         page = [TLSwiperPage pageWithView:pageView reusableIdentifier:ID];
-        page.inset = _settingItem.inset;
     }
+    page.inset = _settingItem.inset;
     if (_settingItem.pageViewType) {
         UILabel *label = page.pageView;
         label.text = @(index+1).stringValue;
+        label.backgroundColor = index % 2 ? [UIColor systemTealColor] : [UIColor systemGreenColor];
     }else {
         UIImageView *imgView = page.pageView;
         imgView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%zi", index % 9]];
