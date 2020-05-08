@@ -20,16 +20,20 @@
 ```objc
 // 1. 创建swiper
 TLSwiper *swiper = [TLSwiper swiperWithDelegate:self];
+
 // 2. 属性设置
 swiper.frame = self.view.frame;
 swiper.isInfiniteFlow = YES;
 swiper.autoPlay = YES;
+
 // 3. 设置页码组件样式
 swiper.pageControl.pageIndicatorTintColor = [UIColor darkGrayColor];
 swiper.pageControl.currentPageIndicatorTintColor = [UIColor systemRedColor];
 [self.view addSubview:swiper];
 
+
 // 4. 实现数据源方法 TLSwiperDataSourceAndDelegate
+
 // 返回总页数
 - (NSInteger)numberOfPageInSwiper:(TLSwiper *)swiper {
     return _settingItem.pageCount;
@@ -37,30 +41,17 @@ swiper.pageControl.currentPageIndicatorTintColor = [UIColor systemRedColor];
 
 /// 返回对应页面的page
 - (TLSwiperPage *)swiper:(TLSwiper *)swiper pageForIndex:(NSUInteger)index {
-    NSString *ID = index > 4 ? @"image page" : @"label page";
-    TLSwiperPage *page = [swiper dequeueReusablePageWithIdentifier:ID];
+    int type = index < 4;
+    NSString *ID = type ? @"image page" : @"label page";
+    TLSwiperPage *page = [swiper dequeueReusablePageWithIdentifier:ID]; // 从缓存池获取page
     
     if (!page) {
-        UIView *pageView = nil;
-        if (index > 4) { // label page
-            UILabel *label = [UILabel new];
-            label.textAlignment = NSTextAlignmentCenter;
-            label.textColor = [UIColor lightGrayColor];
-            label.font = [UIFont boldSystemFontOfSize:200];
-            pageView = label;
-            
-        }else { // image page
-            UIImageView *imgView = [[UIImageView alloc] init];
-            imgView.contentMode = UIViewContentModeScaleAspectFill;
-            imgView.backgroundColor = [UIColor tertiarySystemGroupedBackgroundColor];
-            imgView.clipsToBounds = YES;
-            pageView = imgView;
-        }
-        
-        page = [TLSwiperPage pageWithView:pageView reusableIdentifier:ID];
+        UIView *pageView = [self pageViewWithType:type];
+        page = [TLSwiperPage pageWithView:pageView reusableIdentifier:ID]; // 创建page
     }
+    
     page.inset = _settingItem.inset; // page相对于swiper的缩进
-    if (index > 4) {
+    if (type == 0) {
         UILabel *label = page.pageView;
         label.text = @(index+1).stringValue;
         label.backgroundColor = index % 2 ? [UIColor systemTealColor] : [UIColor systemGreenColor];
@@ -69,6 +60,26 @@ swiper.pageControl.currentPageIndicatorTintColor = [UIColor systemRedColor];
         imgView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%zi", index % 9]];
     }
     return page;
+}
+
+- (UIView *)pageViewWithType:(int)type {
+    UIView *pageView = nil;
+    if (type == 0) { // label page
+        UILabel *label = [UILabel new];
+        label.textAlignment = NSTextAlignmentCenter;
+        label.textColor = [UIColor lightGrayColor];
+        label.font = [UIFont boldSystemFontOfSize:200];
+        pageView = label;
+
+    }else { // image page
+        UIImageView *imgView = [[UIImageView alloc] init];
+        imgView.contentMode = UIViewContentModeScaleAspectFill;
+        imgView.backgroundColor = [UIColor tertiarySystemGroupedBackgroundColor];
+        imgView.clipsToBounds = YES;
+        pageView = imgView;
+    }
+    
+    return pageView;
 }
 
 ```
