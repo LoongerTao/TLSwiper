@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-/// 视图中最多只有三个page显示在屏幕上的，其他的都会扔进缓存池
+/// 轮播组件 视图中最多只有三个page显示在屏幕上的，其他的都会扔进缓存池
 @interface TLSwiper : UIView
 /// 是否为无限流，Default is true. 设置该参数后回重置页面
 @property(nonatomic, assign) BOOL isInfiniteFlow;
@@ -38,7 +38,11 @@ NS_ASSUME_NONNULL_BEGIN
 /// 自动轮播，default is NO
 @property(nonatomic, assign, getter=isAutoPlay) BOOL autoPlay;
 @property (nonatomic, weak, nullable) id <TLSwiperDataSourceAndDelegate> delegate;
+/// 是否需要复用page， default is YES， 不复用时每个page都需要有唯一的reusableId
+@property(nonatomic, assign) BOOL reusable;
 
+/// 创建实例对象
+/// @param delegate 数据源和代理
 + (instancetype)swiperWithDelegate:(id <TLSwiperDataSourceAndDelegate>)delegate;
 - (nullable __kindof TLSwiperPage *)dequeueReusablePageWithIdentifier:(NSString *)identifier;
 - (nullable __kindof TLSwiperPage *)pageWithIndex:(NSUInteger)index;
@@ -54,7 +58,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface TLSwiperPage : NSObject
 /// 页面内容（默认充满整个swiper，可以通过inset属性来调节）
 @property(nonatomic, strong) __kindof UIView *pageView;
-/// 复用标识符
+/// 复用标识符，不复用时每个page都需要有唯一的reusableId
 @property(nonatomic, copy, readonly) NSString *reusableId;
 /// 页面所在索引
 @property(nonatomic, assign, readonly) NSUInteger index;

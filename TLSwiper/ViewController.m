@@ -93,7 +93,7 @@
         label.backgroundColor = index % 2 ? [UIColor systemTealColor] : [UIColor systemGreenColor];
     }else {
         UIImageView *imgView = page.pageView;
-        imgView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%zi", index % 9]];
+        imgView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%zi", index % 12]];
     }
     return page;
 }
@@ -105,11 +105,3 @@
 
 @end
 
-
-// MARK: - TODO:
-/*
- 
- 1. 非无限流，自动播放，第一页和最后一页不对
- 2. demo还待完善
- 
- */

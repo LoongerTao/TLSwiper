@@ -96,6 +96,7 @@ static int const SwiperPageCount = 3;
 - (void)initSubViews {
     self.scrollHorizontal = YES;
     self.isInfiniteFlow  = YES;
+    self.reusable = YES;
     UIScrollView *scrollView = [[UIScrollView alloc] init];
     scrollView.showsHorizontalScrollIndicator = NO;
     scrollView.showsVerticalScrollIndicator = NO;
@@ -276,11 +277,17 @@ static int const SwiperPageCount = 3;
 - (void)updatePageForIndex:(NSUInteger)index toPageContentView:(TLSwiperPageContentView *)pageContentView {
     // 将旧的page扔到缓存池
     TLSwiperPage *page = pageContentView.page;
-    [self addPageToCachePool:page];
+    if (self.reusable)  [self addPageToCachePool:page];
     
     // 添加新的page
     page = [self.delegate swiper:self pageForIndex:index];
-    [self dequeuePageFromCachePool:page]; // 移除缓存池中已经显示的page
+    if (self.reusable) {
+        [self dequeuePageFromCachePool:page]; // 移除缓存池中已经显示的page
+    }else {
+        if (![self.cachePool containsObject:page]) [self addPageToCachePool:page];
+    }
+    
+    
     pageContentView.page = page;
     page.index = index;
     pageContentView.tag = index;
@@ -401,22 +408,22 @@ static int const SwiperPageCount = 3;
 - (void)addPageToCachePool:(TLSwiperPage *)page {
     if (!page) return;
     
-    if (!self.cachePool) {
-        self.cachePool = [NSMutableArray array];
-    }
-    [page.pageView removeFromSuperview];
+    if (!self.cachePool) self.cachePool = [NSMutableArray array];
+    
+    if(self.reusable) [page.pageView removeFromSuperview];
+    
     [self.cachePool addObject:page];
 }
 
 - (void)dequeuePageFromCachePool:(TLSwiperPage *)page {
-    if ([self.cachePool containsObject:page]) {
+    if (self.reusable && [self.cachePool containsObject:page]) {
         [self.cachePool removeObject:page];
     }
 }
 
 - (nullable TLSwiperPage *)dequeueReusablePageWithIdentifier:(NSString *)identifier {
     for (TLSwiperPage *page in self.cachePool) {
-        if (page.pageView.superview != nil) continue;
+        if (self.reusable && page.pageView.superview != nil) continue;
         if ([page.reusableId isEqualToString:identifier]) return page;
     }
     
