@@ -245,7 +245,15 @@ static int const SwiperPageCount = 3;
 }
 
 - (void)updateContent {
+    // 单页，不可滚动
+    if (!self.scrollView.scrollEnabled) {
+        [self updatePageForIndex:0 toPageContentView:self.swiperPages.firstObject];
+        self.scrollView.contentOffset = CGPointMake(0, 0);
+        return;
+    }
     
+    // 多页
+    // 非无限流，页面已经滑到尽头
     if(!self.isInfiniteFlow && (self.isFirstPage || self.isLastPage))  return;
 
     NSInteger page = self.pageControl.currentPage;
@@ -274,22 +282,25 @@ static int const SwiperPageCount = 3;
     }
 }
 
-- (void)updatePageForIndex:(NSUInteger)index toPageContentView:(TLSwiperPageContentView *)pageContentView {
+- (void)updatePageForIndex:(NSInteger)index toPageContentView:(TLSwiperPageContentView *)pageContentView {
     // 将旧的page扔到缓存池
-    TLSwiperPage *page = pageContentView.page;
-    if (self.reusable)  [self addPageToCachePool:page];
-    
-    // 添加新的page
-    page = [self.delegate swiper:self pageForIndex:index];
-    if (self.reusable) {
-        [self dequeuePageFromCachePool:page]; // 移除缓存池中已经显示的page
-    }else {
-        if (![self.cachePool containsObject:page]) [self addPageToCachePool:page];
+    if (self.reusable && pageContentView.page)  {
+        [self addPageToCachePool:pageContentView.page];
     }
     
+    // 添加新的page
+    if(index < 0 || index >= [self.delegate numberOfPageInSwiper:self]) return;
+    TLSwiperPage *newPage = [self.delegate swiper:self pageForIndex:index];
+    if (self.reusable) {
+        [self dequeuePageFromCachePool:newPage]; // 移除缓存池中已经显示的page
+    }else {
+        if (![self.cachePool containsObject:newPage]) {
+            [self addPageToCachePool:newPage];
+        }
+    }
     
-    pageContentView.page = page;
-    page.index = index;
+    pageContentView.page = newPage;
+    newPage.index = index;
     pageContentView.tag = index;
 }
 
@@ -423,7 +434,7 @@ static int const SwiperPageCount = 3;
 
 - (nullable TLSwiperPage *)dequeueReusablePageWithIdentifier:(NSString *)identifier {
     for (TLSwiperPage *page in self.cachePool) {
-        if (self.reusable && page.pageView.superview != nil) continue;
+        if (self.reusable && page.pageView.superview != nil) continue; // 已经被使用
         if ([page.reusableId isEqualToString:identifier]) return page;
     }
     
